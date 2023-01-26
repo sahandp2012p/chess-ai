@@ -14,7 +14,9 @@ engine = chess.engine.SimpleEngine.popen_uci("./stockfish/15/stockfish-windows-2
 for position in positions:
     evals.append(engine.analyse(position, chess.engine.Limit(depth=18))['score'].white().score())
     print(engine.analyse(position, chess.engine.Limit(depth=18))['score'].white().score())
+    
 
+engine.close()
 
 # Creating the dataframe to train the model
 
